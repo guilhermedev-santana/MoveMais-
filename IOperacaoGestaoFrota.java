@@ -1,4 +1,4 @@
-public interface OperacaoGestaoFrota {
+public interface IOperacaoGestaoFrota {
 
 	void adicionarVeiculo(Veiculo veiculo);
 
@@ -6,7 +6,7 @@ public interface OperacaoGestaoFrota {
 
 	void procurarVeiculo(int id);
 
-	void procurarCategoria(Categoria categoria);
+	void procurarCategoria(CategoriaEnum categoriaEnum);
 
 	void atualizarValorDiaria(int id, double valor);
 

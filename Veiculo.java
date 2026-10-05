@@ -8,12 +8,12 @@ public abstract class Veiculo {
 	private String marca;
 	private String cor;
 	private double valorDiaria;
-	private EstadoVeiculo estado;
-	private Categoria categoria;
+	private EstadoVeiculoEnum estado;
+	private CategoriaEnum categoriaEnum;
 
 	public Veiculo(String modelo, String marca, String cor,
-	               double valorDiaria, EstadoVeiculo estado,
-	               Categoria categoria) {
+	               double valorDiaria, EstadoVeiculoEnum estado,
+	               CategoriaEnum categoriaEnum) {
 
 		this.id = proxid++;
 		qttTotalVeiculos++;
@@ -23,7 +23,7 @@ public abstract class Veiculo {
 		this.cor = cor;
 		this.setValorDiaria(valorDiaria);
 		this.estado = estado;
-		this.categoria = categoria;
+		this.categoriaEnum = categoriaEnum;
 	}
 
 	public static int getQttTotalVeiculos() {
@@ -67,19 +67,19 @@ public abstract class Veiculo {
 		}
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
+	public CategoriaEnum getCategoria() {
+		return categoriaEnum;
 	}
 
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
+	public void setCategoria(CategoriaEnum categoriaEnum) {
+		this.categoriaEnum = categoriaEnum;
 	}
 
-	public EstadoVeiculo getEstado() {
+	public EstadoVeiculoEnum getEstado() {
 		return estado;
 	}
 
-	public void setEstado(EstadoVeiculo estado) {
+	public void setEstado(EstadoVeiculoEnum estado) {
 		this.estado = estado;
 	}
 
@@ -101,6 +101,6 @@ public abstract class Veiculo {
 				", cor=" + cor +
 				", valorDiaria=" + valorDiaria +
 				", estado=" + estado +
-				", categoria=" + categoria + "]";
+				", categoria=" + categoriaEnum + "]";
 	}
 }

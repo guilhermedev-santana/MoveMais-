@@ -1,4 +1,4 @@
-public enum Categoria {
+public enum CategoriaEnum {
 	CARRO,
 	CAMINHAO,
 	MOTOCICLETA
