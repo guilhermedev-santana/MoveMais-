@@ -1,14 +1,16 @@
-
 public class Carro extends Veiculo {
 
 	private double capacidadePortaMala;
 	private String tipoCombustivel;
-	Categoria categoria;
 
-	public Carro(String modelo, String marca, String cor, double valorDiaria, EstadoVeiculo estado, Categoria categoria,
-			double capacidadeCombustivel, String tipoCombustivel) {
-		super(modelo, marca, cor, valorDiaria, estado, categoria);
-		this.capacidadePortaMala = capacidadeCombustivel;
+	public Carro(String modelo, String marca, String cor,
+	             double valorDiaria, EstadoVeiculoEnum estado,
+	             CategoriaEnum categoriaEnum, double capacidadePortaMala,
+	             String tipoCombustivel) {
+
+		super(modelo, marca, cor, valorDiaria, estado, categoriaEnum);
+
+		this.capacidadePortaMala = capacidadePortaMala;
 		this.tipoCombustivel = tipoCombustivel;
 	}
 
@@ -28,15 +30,23 @@ public class Carro extends Veiculo {
 		this.tipoCombustivel = tipoCombustivel;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
+	@Override
 	public void fichaTecnica() {
-		System.out.println("====== FICHA TÉCNICA =====");
-		System.out.println("\nModelo: " + getModelo() + "\nMarca: " + getMarca() + "\nCor: " + getCor()
-				+ "\nValorDiaria: " + getValorDiaria() + "\nCategoria: " + getCategoria() + "\nEstado: " + getEstado()
-				+ "\nCapacidade do Porta Mala: " + getCapacidadePortaMala() + "\nTipo de Combustivel: "
+
+		System.out.println("====== FICHA TÉCNICA ======");
+
+		System.out.println("ID: " + getId());
+		System.out.println("Modelo: " + getModelo());
+		System.out.println("Marca: " + getMarca());
+		System.out.println("Cor: " + getCor());
+		System.out.println("Valor da diária: R$ " + getValorDiaria());
+		System.out.println("Categoria: " + getCategoria());
+		System.out.println("Estado: " + getEstado());
+		System.out.println("Capacidade do porta-malas: "
+				+ getCapacidadePortaMala() + " L");
+		System.out.println("Tipo de combustível: "
 				+ getTipoCombustivel());
+
+		System.out.println();
 	}
 }
