@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class GestaoFrota implements OperacaoGestaoFrota {
+public class GestaoFrota implements IOperacaoGestaoFrota {
 
 	private ArrayList<Veiculo> veiculos;
 
@@ -64,13 +64,13 @@ public class GestaoFrota implements OperacaoGestaoFrota {
 	}
 
 	@Override
-	public void procurarCategoria(Categoria categoria) {
+	public void procurarCategoria(CategoriaEnum categoriaEnum) {
 
 		boolean encontrado = false;
 
 		for (Veiculo veiculo : veiculos) {
 
-			if (veiculo.getCategoria() == categoria) {
+			if (veiculo.getCategoria() == categoriaEnum) {
 
 				veiculo.fichaTecnica();
 
