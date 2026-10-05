@@ -1,13 +1,15 @@
-
 public class Caminhao extends Veiculo {
 
 	private double capacidadeCarga;
 	private int numeroEixos;
-	Categoria categoria;
 
-	public Caminhao(String modelo, String marca, String cor, double valorDiaria, EstadoVeiculo estado, Categoria categoria,
-			double capacidadeCarga, int numeroEixos) {
+	public Caminhao(String modelo, String marca, String cor,
+	                double valorDiaria, EstadoVeiculo estado,
+	                Categoria categoria, double capacidadeCarga,
+	                int numeroEixos) {
+
 		super(modelo, marca, cor, valorDiaria, estado, categoria);
+
 		this.capacidadeCarga = capacidadeCarga;
 		this.numeroEixos = numeroEixos;
 	}
@@ -28,16 +30,23 @@ public class Caminhao extends Veiculo {
 		this.numeroEixos = numeroEixos;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
 	@Override
 	public void fichaTecnica() {
-		System.out.println("====== FICHA TÉCNICA =====");
-		System.out.println("\nModelo: " + getModelo() + "\nMarca: " + getMarca() + "\nCor: " + getCor()
-				+ "\nValorDiaria: " + getValorDiaria() + "\nCategoria: " + getCategoria() + "\nEstado: " + getEstado()
-				+ "\nCapacidade da Carga: " + getCapacidadeCarga() + "\nNumeros de Eixos: " + getNumeroEixos());
-	}
 
+		System.out.println("====== FICHA TÉCNICA ======");
+
+		System.out.println("ID: " + getId());
+		System.out.println("Modelo: " + getModelo());
+		System.out.println("Marca: " + getMarca());
+		System.out.println("Cor: " + getCor());
+		System.out.println("Valor da diária: R$ " + getValorDiaria());
+		System.out.println("Categoria: " + getCategoria());
+		System.out.println("Estado: " + getEstado());
+		System.out.println("Capacidade de carga: "
+				+ getCapacidadeCarga() + " kg");
+		System.out.println("Número de eixos: "
+				+ getNumeroEixos());
+
+		System.out.println();
+	}
 }
