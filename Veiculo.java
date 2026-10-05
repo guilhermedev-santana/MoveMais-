@@ -1,4 +1,5 @@
 public abstract class Veiculo {
+
 	private static int proxid = 1;
 	private static int qttTotalVeiculos = 0;
 
@@ -10,16 +11,19 @@ public abstract class Veiculo {
 	private EstadoVeiculo estado;
 	private Categoria categoria;
 
-	public Veiculo(String modelo, String marca, String cor, double valorDiaria, EstadoVeiculo estado,Categoria categoria) {
+	public Veiculo(String modelo, String marca, String cor,
+	               double valorDiaria, EstadoVeiculo estado,
+	               Categoria categoria) {
+
 		this.id = proxid++;
 		qttTotalVeiculos++;
+
 		this.modelo = modelo;
 		this.marca = marca;
 		this.cor = cor;
 		this.setValorDiaria(valorDiaria);
 		this.estado = estado;
 		this.categoria = categoria;
-		
 	}
 
 	public static int getQttTotalVeiculos() {
@@ -55,10 +59,11 @@ public abstract class Veiculo {
 	}
 
 	public void setValorDiaria(double valorDiaria) {
+
 		if (valorDiaria > 0) {
 			this.valorDiaria = valorDiaria;
 		} else {
-			System.out.println("Valor Incorreto!");
+			System.out.println("Valor incorreto!");
 		}
 	}
 
@@ -90,8 +95,12 @@ public abstract class Veiculo {
 
 	@Override
 	public String toString() {
-		return "Veiculo [id=" + id + ", modelo=" + modelo + ", marca=" + marca + ", cor=" + cor + ", valorDiaria="
-				+ valorDiaria + ", estado=" + estado + ", categoria=" + categoria + "]";
+		return "Veiculo [id=" + id +
+				", modelo=" + modelo +
+				", marca=" + marca +
+				", cor=" + cor +
+				", valorDiaria=" + valorDiaria +
+				", estado=" + estado +
+				", categoria=" + categoria + "]";
 	}
-
 }
